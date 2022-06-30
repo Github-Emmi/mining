@@ -1,0 +1,67 @@
+{% load static %}
+
+<!Doctype Html>
+<Html>
+    <head>
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static 'assets/public/pn.png' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/Header.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">        
+
+    </head>
+
+    <body>
+        <div class="leg">
+            <header class="header fixed-top smalex" style=background:#141414>
+                <nav class="navbar navbar-expand-lg navbar-light main-nav" >
+                <div class="container-fluid">
+                    <a href="/">
+                        <img src="{% static 'assets/public/pn.png' %}" height="80px" alt=""/>
+                    </a>
+                        
+                        
+                        
+                
+                    
+                    <button class="navbar-toggler collapsed" data-toggle="collapse" data-target="#MainNav">
+                        <span class="navbar-toggler-icon" ></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="MainNav">
+                        <ul class="navbar-nav mr-auto mt-sms-3">
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="/" style="color:#fff">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-center" href="about" style="color:#fff">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-center" href="pricing" style=color:#fff>Pricing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-center" href="affiliate" style="color:#fff">Affiliate</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-center" href="farm" style="color:#fff">Mining Farm</a>
+                            </li>
+                            <li class="nav-item">
+                            </li>
+                        </ul>
+                        
+                        <ul class="navbar-nav navbar-nav--right ml-auto d-flex !important">
+                            <li class="nav-item right-navi d-flex mr-2">
+                                <a href="login/" class="register nav-btn" style="background:#fd961a;text-decoration:none">Sign In</a>
+                            </li>
+                            <li class="nav-item right-navi d-flex">
+                                <a href="register/" class="register nav-btn" style="background:#fd961a;text-decoration:none">Create Account</a>
+                            </li>
+                        </ul>
+                        
+                        
+                            
+                    </div>
+                </div>
+            </nav>
+        
+        </header>
+
+        </div>

@@ -1,0 +1,161 @@
+{% extends "layouts/base.html" %}
+
+{% load widget_tweaks %}
+
+<!-- {% block title %} Dashboard {% endblock %}  -->
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <!-- <link href="/static/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet"> -->
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="c-main">
+  <div class="container-fluid">
+
+    <div class="fade-in">
+      <div class="row">
+        <div class="col-sm-12 col-lg-5 ">
+            <div class="card">
+                <div class="card-header with-border">
+                    <h3 class="card-title">Fund Account</h3>
+                </div>
+                <div class="card-body">
+                    <form action="" class="form-horizontal form-material" method="post">
+                      {% csrf_token %}
+
+                      <h2> {{ msg }} </h2>
+                      
+
+                      {% for field in credit %}
+                        <div class="form-group">
+                          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                          {{ field|add_class:'form-control' }}
+                          {% for error in field.errors %}
+                            <span class="help-block">{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                      {% endfor %}
+
+              
+                     <div class="form-group">
+                      
+                        <button type="submit" name="new-withdraw" class="btn btn-dark btn-block">Sumbit</button>
+                    </div>
+                  </form>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-7 ">
+            <div class="card">
+                
+                <div class="card-body table-responsive">
+                  {% if user.fund_method == 'BTC'  %}
+                  
+                  <div>
+                    <h3>Pay the sum of ${{ user.fund_amount }} {{ user.fund_method }} to  </h3>
+                    <pre style="font-size: 105%; line-height: 1.45; color: white; background-color: rgb(99 111 131); padding: 16px; overflow: auto; border-radius: 6px;">{{data}} BTC<code style=" border-radius: 6px; color: white;"> to PUT YOUR BTC Address HERE</code></pre>
+                    
+                    <input id="foo" value="PUT YOUR BTC Address HERE">
+                    <button class="btn btn-dark" data-clipboard-target="#foo">
+                      
+                      Copy
+                    </button>
+                    <p>Please Ensure You pay only BTC(Bitcoin) to this address</p>
+                                          
+                    
+                  </div>
+
+                  {% elif user.fund_method == 'ETH'  %}
+                  <div>
+                    <h3>Pay the sum of ${{ user.fund_amount }} {{ user.fund_method }}  </h3>
+
+                    <pre style="font-size: 105%; line-height: 1.45; background-color: rgb(99 111 131); padding: 16px; overflow: auto; border-radius: 6px; color: white;">{{eth_data}} ETH<code style="color: white; border-radius: 6px;"> to PUT YOUR ETH Address HERE</code></pre>
+                    
+                    <input id="foo"  value="PUT YOUR ETH Address HERE">
+
+                    <button class="btn btn-dark" data-clipboard-target="#foo" data-container="body" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="copied.">
+                      copy
+                    </button>
+                    <p>Please Ensure You pay only ETH(Ethereum) to this address</p>
+                                                       
+                                        
+                  </div>
+
+                  {% elif user.fund_method == 'USDT'  %}
+                  <div>
+                    <h3>Pay the sum of ${{ user.fund_amount }} {{ user.fund_method }} to  </h3>
+
+                    <pre style="font-size: 105%; line-height: 1.45; background-color: rgb(99 111 131); padding: 16px; overflow: auto; border-radius: 6px;"><code style="color: white; border-radius: 6px;">PUT YOUR USDT Address HERE</code></pre>
+                    
+                    <input id="foo" value="PUT YOUR USDt Address HERE">
+                    <button class="btn btn-dark" data-clipboard-target="#foo">
+                      Copy
+                    </button>
+                    <p>Please Ensure You pay only USDT(Tether) to this address</p>
+                    
+                     
+                                        
+                  </div>
+
+                  {% else %}
+                  <div>
+                    <h3>Please Select an Amount and a method</h3>
+                    
+                    
+                  </div>
+                  {% endif %}
+               
+                                            </tbody></table>
+                </div>
+            </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="/static/assets/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js"></script>
+    <script src="/static/assets/vendors/@coreui/utils/js/coreui-utils.js"></script>
+    <script src="/static/assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script  src="/static/assets/js/popovers.js"></script>
+
+    
+
+    <script>
+      var clipboard = new ClipboardJS('.btn');
+
+      clipboard.on('success', function (e) {
+        console.log(e);
+        
+      });
+
+      clipboard.on('error', function (e) {
+        console.log(e);
+      });
+    </script>
+
+{% endblock javascripts %}

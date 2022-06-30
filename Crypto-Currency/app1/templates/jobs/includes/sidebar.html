@@ -1,0 +1,58 @@
+{% load static %}
+
+
+    <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+        <div class="c-sidebar-brand d-lg-down-none">
+          <svg class="c-sidebar-brand-full" width="118" height="46" alt="">
+            <use xlink:href="{% static 'assets/public/pn.svg' %}"></use>
+          </svg>
+          <svg class="c-sidebar-brand-minimized" width="46" height="46" alt="">
+            <use xlink:href="{% static 'assets/public/pn.svg' %}"></use>
+          </svg>
+        </div>
+        <ul class="c-sidebar-nav">
+          <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/dashboard">
+            <svg class="c-sidebar-nav-icon">
+              <use xlink:href="/static/assets/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+            </svg> Dashboard</a>
+          </li>
+          <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/purchasePlan">
+            <svg class="c-sidebar-nav-icon">
+              <use xlink:href="/static/assets/vendors/@coreui/icons/svg/free.svg#cil-cart"></use>
+            </svg> Purchase Plan</a>
+          </li>
+          <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/investments">
+            <svg class="c-sidebar-nav-icon">
+              <use xlink:href="/static/assets/vendors/@coreui/icons/svg/free.svg#cil-money"></use>
+            </svg> My Investments</a>
+          </li>
+          <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/earnings">
+            <svg class="c-sidebar-nav-icon">
+              <use xlink:href="/static/assets/vendors/@coreui/icons/svg/free.svg#cil-shield-alt"></use>
+            </svg> Earnings</a>
+          </li>
+          <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/depositHistory">
+            <svg class="c-sidebar-nav-icon">
+              <use xlink:href="/static/assets/vendors/@coreui/icons/svg/free.svg#cil-bank"></use>
+            </svg> Deposit History</a>
+          </li>
+          <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/withdraw">
+            <svg class="c-sidebar-nav-icon">
+              <use xlink:href="/static/assets/vendors/@coreui/icons/svg/free.svg#cil-wallet"></use>
+            </svg> Wihdraw</a>
+          </li><li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/fundAccount">
+            <svg class="c-sidebar-nav-icon">
+              <use xlink:href="/static/assets/vendors/@coreui/icons/svg/free.svg#cil-credit-card"></use>
+            </svg> Fund Account</a>
+          </li>
+          
+          
+          
+          <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href={% url 'logout' %} >
+            <svg class="c-sidebar-nav-icon">
+              <use xlink:href="/static/assets/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+            </svg> Logout</a></li>
+
+        </ul>
+        <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
+      </div>

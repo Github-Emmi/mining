@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="venex ltd">
+    <title>
+      Venex Ltd - {% block title %}{% endblock %} 
+    </title>
+    
+    
+    <!-- Main styles for this application-->
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+    <link href="/static/assets/css/main.css" rel="stylesheet">
+
+    <!-- Specific Page CSS goes HERE  -->
+    {% block stylesheets %}{% endblock stylesheets %}
+
+  </head>
+  <body class="c-app" style="background-color: #141414;">
+
+    {% include 'includes/sidebar.html' %}
+
+    <div class="c-wrapper c-fixed-components">
+
+      {% include 'includes/navigation.html' %}
+
+      <div class="c-body">
+
+        {% block content %}{% endblock content %}
+
+        {% include 'includes/footer.html' %}
+    
+      </div>
+    
+    </div>
+
+    {% include 'includes/scripts.html' %}
+
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
+
+  </body>
+</html>

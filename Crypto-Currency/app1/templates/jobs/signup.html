@@ -2,6 +2,7 @@
 {% load static %}
 {% block title %}Signup With Venex LTD{% endblock %}
 {% block meta_keywords %}Venex LTD {% endblock %}
+{% load widget_tweaks %}
 
 {% block alert %}
 <script>
@@ -125,49 +126,57 @@
 <input type="hidden" name="a" value="signup">
 <input type="hidden" name="action" value="signup">
       <table width="100%" border="0" cellspacing="0">
-        <tbody><tr>
-          <th>
-            <h2>Account Information</h2>
-          </th>
-        </tr>
-        <tr>
+        <tbody>
+          <tr>
+            <th>
+              <h2>Account Information</h2>
+            </th>
+         </tr>
+        <!-- <tr>
           <td width="1000%">
                         <span class="fullname">
               <input placeholder="Your Full Name" type="text" name="fullname" value="" class="inpts" size="30">
             </span></td>
         </tr>
-        <tr>
+        <tr> -->{{ msg }}
           <td>
                         <span class="fullname">
-              <input placeholder="Your User Name" type="text" name="username" value="" class="inpts" size="30">
+              <!-- <input placeholder="Your User Name" type="text" name="username" value="" class="inpts" size="30"> -->
+              {{ form.username|add_class:'form-control' }}
             </span></td>
         </tr>
         <tr>
           <td>              
                         <span class="email">
-              <input placeholder="Your E-mail Address" type="email" name="email" value="" class="inpts" size="30">
+              <!-- <input placeholder="Your E-mail Address" type="email" name="email" value="" class="inpts" size="30"> -->
+              {{ form.email|add_class:'form-control' }}
             </span>
+            <span class="text-error">{{ form.email.errors }}</span>
           </td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td>
                         <span class="email">
               <input placeholder="Retype E-mail Address" type="email" name="email1" value="" class="inpts" size="30">
             </span>
           </td>
-        </tr>
+        </tr> -->
         <tr>
           <td>              
                         <span class="password">
-              <input placeholder="Define Password" type="password" name="password" value="" class="inpts" size="30">
+              <!-- <input placeholder="Define Password" type="password" name="password" value="" class="inpts" size="30"> -->
+              {{ form.password1|add_class:'form-control' }}
             </span>
+            <span class="text-error">{{ form.password1.errors }}</span>
           </td>
         </tr>
         <tr>
           <td>
                         <span class="password">
-              <input placeholder="Retype Password" type="password" name="password2" value="" class="inpts" size="30">
+              <!-- <input placeholder="Retype Password" type="password" name="password2" value="" class="inpts" size="30"> -->
+              {{ form.password2|add_class:'form-control' }}
             </span>
+            <span class="text-error">{{ form.password2.errors }}</span>
           </td>
         </tr>
         <tr>
@@ -180,10 +189,11 @@
  
             <span class="acctype">
              <div class="form__input-container">
- <input type="text" class="form__input form__input-full-width" name="wallet_address" value="" placeholder="Wallet Address">
-
+ <!-- <input type="text" class="form__input form__input-full-width" name="pay_account[1000][Wallet Address]" value="" placeholder="Wallet Address"> -->
+            {{ form.wallet_address|add_class:'form-control' }}
 </div>
             </span>
+            <span class="text-error">{{ form.wallet_address.errors }}</span>
             
           </td>
         </tr>
@@ -195,14 +205,18 @@
         <tr>
         <td>
             <span class="secques">
-              <input placeholder="Phone Number" type="text" name="number" value="" class="inpts" size="30">
+              <!-- <input placeholder="Phone Number" type="text" name="sq" value="" class="inpts" size="30"> -->
+              {{ form.phone_no|add_class:'form-control' }}
             </span>
+            <span class="text-error">{{ form.wallet_address.errors }}</span>
           </td>
         </tr>
                                     <tr>
           <td align="center" valign="middle">
             <input type="checkbox" name="agree" value="1">
-            I agree with <a href="#">Terms and conditions</a> </td> </tr> <tr>
+            I agree with 
+            <a href="{% url 'terms' %}">
+              Terms and conditions</a> </td> </tr> <tr>
           <td align="center" valign="middle">
             <input type="submit" value="Register" class="sbmt">
           </td>

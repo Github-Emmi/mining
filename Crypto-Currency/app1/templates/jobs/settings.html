@@ -1,0 +1,184 @@
+{% extends "layouts/base.html" %}
+{% load widget_tweaks %}
+
+
+<!-- {% block title %} Dashboard {% endblock %}  -->
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <!-- <link href="/static/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet"> -->
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+
+<div class="c-main">
+    <div class="container-fluid">
+        <div class="fade-in">
+            <div class="row">
+                <!-- Column -->
+                <div class="col-lg-4 col-xlg-3 col-md-5">
+                    <div class="card">
+                        
+                        <h2 class="card-title text-center">$0 USD</h2>
+                        <div class="card-body"> 
+                            <small class="text-muted">Username </small>
+                            <h6>{{ user.username }}</h6>
+
+                            <small class="text-muted">Email Address </small>
+                            <h6>{{ user.email }}</h6> 
+
+                            <small class="text-muted p-t-30 db">BTC Address</small>
+                            <h6>{{ user.profile.btc_address }}</h6>
+
+                            <small class="text-muted">ETH Address </small>
+                            <h6>{{ user.profile.eth_address }}</h6>
+                            
+
+                            <small class="text-muted">USDT(Tether) Address </small>
+                            <h6>{{ user.profile.usdt_address }}</h6>
+                            
+
+                            <h6 class="text-muted">For Enquiries contact - <em class="text-danger">support@primeminners.co</em> </h6>
+
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-xlg-9 col-md-7">
+                    <div class="card">
+                        <!-- Tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#editprofile" role="tab" aria-controls="pills-timeline" aria-selected="true">Upload Details </a>
+                            </li>
+                            
+                        </ul>
+                        <!-- Tabs -->
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="editprofile" role="tabpanel" aria-labelledby="editprofile-tab">
+                                <div class="card-body">
+                                    
+                                        <form action=""  method="POST" >
+                                            {% csrf_token %}
+
+
+                                            <h6>{{ msg }}</h6>
+
+                                                {% for field in form %}
+                                                    <div class="form-group">
+                                                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                                    {{ field|add_class:'form-control' }}
+                                                    <!-- {% for error in field.errors %}
+                                                        <span class="help-block">{{ error }}</span>
+                                                    {% endfor %} -->
+                                                    </div>
+                                                {% endfor %}
+
+                                            <div class="form-group">
+
+                                             <button type="submit"  class="btn btn-dark mx-auto text-uppercase">Update</button>
+                                               
+                                            </div>
+
+                                            
+                                        </form>
+                                        
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="changepassword" role="tabpanel" aria-labelledby="password-tab">
+                                <div class="card-body">
+                                    <form action="" class="form-horizontal form-material" id="myform" method="POST" accept-charset="utf-8">
+                                        
+                                        
+
+                                        <div class="form-group">
+                                            <label class="col-md-12">New Password</label>
+                                            <div class="col-md-12">
+                                                <input type="password" name="new_password" autocomplete="off" class="form-control form-control-line">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-12">Confirm New Password</label>
+                                            <div class="col-md-12">
+                                                <input type="password" name="confirm_newpassword" autocomplete="off" class="form-control form-control-line">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-12">Current Password</label>
+                                            <div class="col-md-12">
+                                                <input type="password" name="current_password" autocomplete="off" class="form-control form-control-line">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <button type="submit" name="update-password" class="btn btn-dark mx-auto text-uppercase">Update Password</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> 
+
+                                <div class="tab-pane fade" id="withdraw" role="tabpanel" aria-labelledby="withdraw-tab">
+                                    
+                                        <form action=""  method="POST">
+                                        
+                                            {% csrf_token %}
+
+                                            <h3 class="card-header">Update Your Withdrawal Details</h3>
+                                            <div class="card-body">
+                                            
+
+                                            <p> PRIME Minners cannot be held responsible for delays, extra costs or financial loss that arises from being provided incorrect withdrawal information, so please ensure that you double check the details.
+                                            </p>
+                                            <p>If you have any questions, don't hesitate to contact support</p>
+ 
+                                            </div>
+ 
+                                            {{ withdrawal.as_p }}
+
+
+                                            <div class="col-sm-12">
+                                                <button type="submit"  class="btn btn-dark mx-auto text-uppercase">Update</button>
+                                            </div>
+                                        
+                                        
+                                    </form>
+                                </div>
+                                </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            </div> <!-- row -->
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="/static/assets/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js"></script>
+    <script src="/static/assets/vendors/@coreui/utils/js/coreui-utils.js"></script>
+    <script src="/static/assets/js/main.js"></script>
+
+{% endblock javascripts %}

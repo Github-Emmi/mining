@@ -1,6 +1,6 @@
 {% extends 'jobs/base.html' %}
 {% load static %}
-{% block title %}Get Started With Venex {% endblock %}
+{% block title %}Venex contact {% endblock %}
 {% block meta_keywords %}Venex LTD contact {% endblock %}
 
 {% block alert %}
@@ -22,7 +22,6 @@
     <div class="bannerinsideInner">
         <h2>Contact Us :</h2>
     </div>
-</div>
 </div>
 
 <div id="goog-gt-tt" class="skiptranslate" dir="ltr">
@@ -60,7 +59,7 @@ function checkform() {
 </script>
 
 
-<form method="post" action="{% url 'contact' %}" name="mainform" onsubmit="return checkform()">
+<form method="POST" action="{% url 'contact' %}" name="mainform" onsubmit="return checkform()">
     {% csrf_token %}
                 
                 <table width="100%" border="0" cellpadding="5" cellspacing="5">

@@ -1,0 +1,80 @@
+{% extends "layouts/base.html" %}
+
+<!-- {% block title %} Dashboard {% endblock %}  -->
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <!-- <link href="/static/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet"> -->
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+
+    <div class="alert alert-primary alert-dismissible fade show container-fluid" role="alert"><em><strong>To View Investments  </strong></em>
+        <p><strong>Deposit funds into your account and select a minning plan </strong></p>
+        <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+        
+
+<div class="c-main">
+  <div class="container">
+    <div class="fade-in">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-md-flex align-items-center">
+                            <div>
+                                <h3 class="card-title"><em>No Active Investment</em></h3>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="dl">
+                                    <form class="m-t-20" action="" method="get">
+                                        <div class="input-group mb-3">
+                                            <input type="text" name="search" class="form-control" placeholder="Enter transaction id" aria-label="" aria-describedby="basic-addon1">
+                                            
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+<!-- /.row -->
+
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="/static/assets/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js"></script>
+    <script src="/static/assets/vendors/@coreui/utils/js/coreui-utils.js"></script>
+    <script src="/static/assets/js/main.js"></script>
+
+{% endblock javascripts %}

@@ -1,0 +1,92 @@
+{% extends "layouts/base.html" %}
+
+<!-- {% block title %} Dashboard {% endblock %}  -->
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <!-- <link href="/static/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet"> -->
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+
+<div class="c-main">
+    <div class="container-fluid">
+        <div class="fade-in">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-md-flex align-items-center">
+                                <div>
+                                    <h4 class="card-title">Deposits History</h4>
+                                </div>
+                                <div class="ml-auto">
+                                    <div class="dl">
+                                        <form class="m-t-20" action="" method="get">
+                                            <div class="input-group mb-3">
+                                                <input type="text" name="search" class="form-control" placeholder="Enter transaction id" aria-label="" aria-describedby="basic-addon1">
+                                                
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive ">
+                                <table class="table table-striped table-bordered no-margin">
+                                    <thead>
+                                        <tr class="">
+                                            <th class="border-top-0">Trans ID</th>
+                                            <th class="text-center border-top-0">Amount(USD)</th>
+                                             <th class="text-center border-top-0">Payment mode</th>
+                                            <th class="text-center border-top-0">Status</th>
+                                                                                            <th class="text-center border-top-0">Date Credited</th>
+                                                                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td class="text-center">No record found 
+                                            <!-- <a class="pl-3" href="">View all</a> -->
+                                        </td></tr>                                        </tbody>
+                                </table>
+                            </div>
+                                                         </div>
+                    </div>
+                </div>
+
+                 
+
+            </div>
+    <!-- /.row -->
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="/static/assets/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js"></script>
+    <script src="/static/assets/vendors/@coreui/utils/js/coreui-utils.js"></script>
+    <script src="/static/assets/js/main.js"></script>
+
+{% endblock javascripts %}

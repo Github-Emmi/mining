@@ -1,4 +1,6 @@
 {% load static %}
+
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -39,7 +41,7 @@ function checkform() {
 <!--passing crypto values-->
 
 <script src="{% static 'assets/js/coingecko-coin-price-marquee-widget.js' %}"></script>
-<coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en" vce-ready=""></coingecko-coin-price-marquee-widget> 
+<coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin,doge" currency="usd" background-color="#ffffff" locale="en" vce-ready=""></coingecko-coin-price-marquee-widget> 
 
 <!--passing crypto values ends-->
 
@@ -50,34 +52,34 @@ function checkform() {
                 Account Login
             </div>
             
-            
+            {% if msg %}
+            {{ msg | safe }}
+          
+          {% endif %}  
             
                         <div class="auth-box__form">
-                <form method="post" name="mainform" onsubmit="return checkform()">
-                    {% csrf_token %}
-                    <input type="hidden" name="form_id" value="16534651594422">
-                    <input type="hidden" name="form_token" value="df5b5ccc3ae22c97d7f3a581706924bd">
+                <form method="post" action="" name="mainform" >
+              {% csrf_token %} 
                 	<input type="hidden" name="a" value="do_login">
-<input type="hidden" name="follow" value="">
-<input type="hidden" name="follow_id" value="">
+                    <input type="hidden" name="follow" value="">
+                    <input type="hidden" name="follow_id" value="">
                     <div class="form__input-container">
                         <label for="username">
                             <i class="fa fa-user"></i>
                             Username:</label>
-                        <input placeholder="Enter your username" type="text" name="username" value="" class="form__input form__input-full-width">
+                        <!-- <input placeholder="Enter your username" type="text" name="username" value="" class="form__input form__input-full-width"> -->
+                    {{ form.username|add_class:'form-control' }}
+
                     </div>
                     <div class="form__input-container">
                         <label for="password">
                             <i class="fa fa-key"></i>
                             Password:</label>
-                        <input placeholder="Enter your password" type="password" name="password" class="form__input form__input-full-width">
-                        <div style="padding-top: .3em">
-                            <a href="forget password#">
-                                Lost your password? Recover it now!
-                            </a>
-                        </div>
+                        <!-- <input placeholder="Enter your password" type="password" name="password" class="form__input form__input-full-width"> -->
+                    {{ form.password|add_class:'form-control' }}
+
                     </div>
-                    <div class="form__input-container to-right">
+                    <div class="form__input-container to-left">
                         <label for="check">
                             <input type="checkbox" name="remember" id="check">
                             keep me logged in
@@ -92,6 +94,7 @@ function checkform() {
                         <a href="{% url 'signup' %}">Don't have an account yet? Sign up</a>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
