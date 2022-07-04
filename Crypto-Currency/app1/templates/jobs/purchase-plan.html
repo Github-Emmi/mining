@@ -2,7 +2,7 @@
 
 
 
-{% block title %} purchase pl {% endblock %}
+{% block title %} purchase plan {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 
@@ -14,7 +14,7 @@
   <div class="container-fluid">
     <div class="fade-in">
     
-      <h2 class="page-header text-center text-dark no-border Brand Light Color">CHOOSE YOUR PLAN AND MINNING POWER<br></h2>
+      <h2 class="page-header text-center text-dark no-border Brand Light Color">CHOOSE YOUR PLAN AND INVESTMENT POWER<br></h2>
     
         <div class="row">
           <div class="col-lg-4">
@@ -23,18 +23,18 @@
                 <h3 class="text-uppercase text-bold">Basic plan</h3>
                 <br>
                 <h3 class="price">
-                  <sup></sup>15%
-                  <span class="text-whitex"> <i> returns daily</i></span>
-                  <span class="text-whitex"><i>for 7 days</i></span>
+                  <sup></sup>20%
+                  <span class="text-whitex"> <i> returns </i></span>
+                  <span class="text-whitex"><i>for 24 Hours</i></span>
                 </h3>
 
                 <br>
-                <p><span class="text-bold">Minimum Deposit: $1000 USD</span></p>
-                <p><span class="text-bold">Maximum Deposit: $5,000 USD</span></p>
-                <p><span class="text-bold">Expected Returns: 8250 USD - 27500 USD</span></p>
+                <p><span class="text-bold">Minimum Deposit: $50 USD</span></p>
+                <p><span class="text-bold">Maximum Deposit: $100 USD</span></p>
+                <p><span class="text-bold">Expected Returns: $60 USD - $120 USD</span></p>
 
                 <br><br>
-                <button class="btn btn-yellow" href="">Select plan</button>
+                <button class="btn btn-yellow" href="{% url 'fundAccount' %}">Select plan</button>
               </div>
             </div>
           </div>
@@ -42,18 +42,18 @@
           <div class="col-lg-4">
             <div class="card">
               <div class="card-body text-center">
-                <h3 class="text-uppercase text-bold">Pro plan</h3>
+                <h3 class="text-uppercase text-bold">Amatuer plan</h3>
                 <br>
                 <h3 class="price">
-                  <sup></sup>25%
-                  <span class="text-whitex"> <i> returns daily</i></span>
-                  <span class="text-whitex"><i>for 7 days</i></span>
+                  <sup></sup>40%
+                  <span class="text-whitex"> <i> returns </i></span>
+                  <span class="text-whitex"><i>for 48 Hours</i></span>
                 </h3>
 
                 <br>
-                <p><span class="text-bold">Minimum Deposit: $6,000 USD</span></p>
-                <p><span class="text-bold">Maximum Deposit: $10,000 USD</span></p>
-                <p><span class="text-bold">Expected Returns: 30000 USD - 45000 USD</span></p>
+                <p><span class="text-bold">Minimum Deposit: $150 USD</span></p>
+                <p><span class="text-bold">Maximum Deposit: $500 USD</span></p>
+                <p><span class="text-bold">Expected Returns: $210 USD - $700 USD</span></p>
 
                 <br><br>
                 <button class="btn btn-yellow" href="">Select plan</button>
@@ -67,15 +67,15 @@
                 <h3 class="text-uppercase text-bold">Standard plan</h3>
                 <br>
                 <h3 class="price">
-                  <sup></sup>40%
-                  <span class="text-whitex"> <i> returns daily</i></span>
-                  <span class="text-whitex"><i>for 7 days</i></span>
+                  <sup></sup>80%
+                  <span class="text-whitex"> <i> returns </i></span>
+                  <span class="text-whitex"><i>for 72 Hours </i></span>
                 </h3>
 
                 <br>
-                <p><span class="text-bold">Minimum Deposit: $11,000 USD</span></p>
-                <p><span class="text-bold">Miximum Deposit: $50,000 USD</span></p>
-                <p><span class="text-bold">Expected Returns: 80,000 USD - 150,000 USD</span></p>
+                <p><span class="text-bold">Minimum Deposit: $600 USD</span></p>
+                <p><span class="text-bold">Miximum Deposit: $2,000 USD</span></p>
+                <p><span class="text-bold">Expected Returns: $1,080 USD - $3,600 USD</span></p>
 
                 <br><br>
                 <button type="submit" name="" class="btn btn-yellow" href="">Select plan</button>
@@ -83,12 +83,51 @@
             </div>
           </div>
 
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h3 class="text-uppercase text-bold">Pro plan</h3>
+                <br>
+                <h3 class="price">
+                  <sup></sup>100%
+                  <span class="text-whitex"> <i> returns </i></span>
+                  <span class="text-whitex"><i>for 4 Days</i></span>
+                </h3>
+
+                <br>
+                <p><span class="text-bold">Minimum Deposit: $2,500 USD</span></p>
+                <p><span class="text-bold">Maximum Deposit: $4,000 USD</span></p>
+                <p><span class="text-bold">Expected Returns: $5,000 USD - $8,000 USD</span></p>
+
+                <br><br>
+               <!-- Boss this button is not working including others -->  <button class="btn btn-yellow" href="{% url 'fundAccount' %}">Select plan</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h3 class="text-uppercase text-bold">Master plan</h3>
+                <br>
+                <h3 class="price">
+                  <sup></sup>120%
+                  <span class="text-whitex"> <i> returns </i></span>
+                  <span class="text-whitex"><i>for 7 Days</i></span>
+                </h3>
+
+                <br>
+                <p><span class="text-bold">Invest: $5,000<sup>+</sup> USD</span></p>
+                <p><span class="text-bold">Expected Returns: $11,000<sup>+</sup> USD</span></p>
+
+                <br><br>
+            <!-- Boss this button is not woorking including others -->   <button type="submit" name="" class="btn btn-yellow" href="{% url 'fundAccount' %}">Select plan</button>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <!-- row -->
-
-
-
-
+        <!--  end of row -->
 
         <section id="deposit-home">
 		
@@ -96,9 +135,9 @@
             <div class="row yellow align-items-center">
               
               <div class="col-lg-8 offset-lg-2 d-flex flex-column text-center mt-2">	
-                              <h1 class="pb-3" style="color:#fd961a">Cloud Mining For <b style="color:#fff">Pro's.</b><br />Prices <b style="color:#fff">For Everyone.</b></h1>
+                              <h1 class="pb-3" style="color:#fd961a">Cloud investment For <b style="color:#fff">Pro's.</b><br />Prices <b style="color:#fff">For Everyone.</b></h1>
                   <p class="p-0 m-0"style="color:#fff">
-                    Besides its privileged service, superior return, customer-centered platform features, easy and safe experience, PRIME MINNERS has the most advantageous prices in the market making mining more competative than even before. This is our way of saying "Thank You" to the ecosystem, technology, future, everyone who has the same excitement and vision as us.
+                    Besides its privileged service, superior return, customer-centered platform features, easy and safe experience, Venex btc and crypto investment network has the most advantageous prices in the market making mining more competative than even before. This is our way of saying "Thank You" to the ecosystem, technology, future, everyone who has the same excitement and vision as us.
                   </p>
               </div>
       
@@ -169,10 +208,10 @@
                             <span class="m-0">
                               DOGECOIN
                             </span>
-                            <!-- <label style="color:#fff;background:#EB2323;position:absolute;padding:3px 6px;font-size:10px;font-weight:700;border-radius:3px;top:-2px;right:10%">NEW</label> -->
+                            <label style="color:#fff;background:#EB2323;position:absolute;padding:3px 6px;font-size:10px;font-weight:700;border-radius:3px;top:-2px;right:10%">NEW</label>
                           </a>
                         </li>
-                        <!-- <li class="nav-item col-4 col-md-3 col-lg-2 p-1 d-flex">
+                        <li class="nav-item col-4 col-md-3 col-lg-2 p-1 d-flex">
                           <a class="nav-link d-flex all-center flex-fill" id="for-doge-tab" data-toggle="tab" href="#tab-doge" role="tab" aria-controls="tab-doge" aria-selected="false">
                             <svg width="16" height="16" class="mr-1" viewBox="0 0 1243 1243" version="1.1" xmlns="http://www.w3.org/2000/svg">
                               <path fill="url(#gradient-horizontal) gray" opacity="1.00" d=" M 614.71 0.00 L 628.02 0.00 C 666.58 0.68 705.15 4.35 742.98 11.97 C 820.46 27.26 894.89 57.69 960.95 100.96 C 1036.38 150.20 1100.90 216.05 1148.61 292.46 C 1192.43 362.46 1222.02 441.33 1234.92 522.90 C 1250.00 617.80 1243.09 716.21 1214.20 807.90 C 1191.42 880.61 1154.91 948.95 1107.39 1008.50 C 1059.87 1068.12 1001.33 1118.94 935.56 1157.52 C 863.21 1200.06 782.11 1227.63 698.81 1237.87 C 605.75 1249.44 510.04 1240.03 421.24 1209.72 C 343.39 1183.35 271.00 1141.10 209.50 1086.57 C 172.46 1053.75 139.33 1016.52 111.08 975.89 C 68.92 915.41 37.67 847.33 19.46 775.88 C 8.06 731.48 1.73 685.79 0.37 639.97 C 0.09 635.08 0.47 630.17 0.00 625.29 L 0.00 617.59 C 0.50 612.06 0.06 606.51 0.44 600.98 C 2.14 547.14 10.84 493.51 26.39 441.93 C 48.60 367.97 84.93 298.31 132.69 237.63 C 174.11 184.95 224.04 138.96 280.04 102.13 C 342.64 60.82 412.83 31.05 486.07 14.84 C 528.28 5.38 571.49 0.72 614.71 0.00 Z"></path>
@@ -182,8 +221,9 @@
                             <span class="m-0">
                               ZCASH
                             </span>
+                            <label style="color:#fff;background:#EB2323;position:absolute;padding:3px 6px;font-size:10px;font-weight:700;border-radius:3px;top:-2px;right:10%">NEW</label>
                           </a>
-                        </li> -->
+                        </li>
                       </ul>
                     </div>
                   
@@ -204,7 +244,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Basic</p>
-                              <h1><small class="pr-2">$</small>500<small> &nbsp;-</small> 1000</h1>
+                              <h1><small class="pr-2">$</small>100<small> &nbsp;-</small> 500</h1>
                               <p>1 TH/S</p>
                             </div>
       
@@ -243,7 +283,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Pro</p>
-                              <h1><small class="pr-2">$</small>1000<small> &nbsp;-</small> 5000</h1>
+                              <h1><small class="pr-2">$</small>600<small> &nbsp;-</small> 1,000</h1>
                               <p>14 TH/s</p>
                             </div>
       
@@ -279,7 +319,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Standard</p>
-                              <h1><small class="pr-2">$</small>5000<small> &nbsp;-</small> 10000</h1>
+                              <h1><small class="pr-2">$</small>2,000<small> &nbsp;-</small> 5,000</h1>
                               
                               <p>75 TH/s</p>
                             </div>
@@ -364,7 +404,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Pro</p>
-                              <h1><small class="pr-2">$</small>500<small> &nbsp;-</small> 1000</h1>
+                              <h1><small class="pr-2">$</small>600<small> &nbsp;-</small> 1,000</h1>
                               
                               <p>61 MH/s</p>
                             </div>
@@ -401,7 +441,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Standard</p>
-                              <h1><small class="pr-2">$</small>1000<small> &nbsp;-</small> 5000</h1>
+                              <h1><small class="pr-2">$</small>2,000<small> &nbsp;-</small> 5,000</h1>
                               
                               <p>295 MH/s</p> 
                             </div>
@@ -431,10 +471,7 @@
       
                       </div>
                       <div class="tab-pane fade" id="tab-ltc" role="tabpanel" aria-labelledby="for-ltc-tab">
-      
-      
-      
-      
+  
                   <div class="row m-0">
                     <div class="col-lg-4 d-flex flex-column p-2">
                       <div class="d-flex flex-column white-bo">
@@ -484,7 +521,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Pro</p>
-                              <h1><small class="pr-2">$</small>500<small> &nbsp;-</small> 1000</h1>
+                              <h1><small class="pr-2">$</small>600<small> &nbsp;-</small> 1,000</h1>
                               
                               <p>85 MH/s</p>
                             </div>
@@ -521,7 +558,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Standard</p>
-                              <h1><small class="pr-2">$</small>1000<small> &nbsp;-</small> 5000</h1>
+                              <h1><small class="pr-2">$</small>2,000<small> &nbsp;-</small> 5,000</h1>
                               
                               <p>417 MH/s</p>
                             </div>
@@ -548,17 +585,8 @@
                     </div>
                   </div>
       
-      
-      
-      
-      
                       </div>
                       <div class="tab-pane fade" id="tab-bch" role="tabpanel" aria-labelledby="for-bch-tab">
-      
-      
-      
-      
-      
                   <div class="row m-0">
                     <div class="col-lg-4 d-flex flex-column p-2">
                       <div class="d-flex flex-column white-bo">
@@ -575,9 +603,6 @@
                               
                               <p>10,000 MH/s</p>
                             </div>
-      
-      
-      
       
                           </div>
                           <i class="fas fa-caret-down slide-down"></i>
@@ -611,7 +636,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Pro</p>
-                              <h1><small class="pr-2">$</small>500<small> &nbsp;-</small> 1000</h1>
+                              <h1><small class="pr-2">$</small>600<small> &nbsp;-</small> 1,000</h1>
                               
                               <p>110,000 MH/s</p>
                             </div>
@@ -650,7 +675,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Standard</p>
-                              <h1><small class="pr-2">$</small>1000<small> &nbsp;-</small> 5000</h1>
+                              <h1><small class="pr-2">$</small>2,000<small> &nbsp;-</small> 5,000</h1>
                                
                               <p>530,000 MH/s</p>
                             </div>
@@ -733,7 +758,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Pro</p>
-                              <h1><small class="pr-2">$</small>500<small> &nbsp;-</small> 1000</h1>
+                              <h1><small class="pr-2">$</small>600<small> &nbsp;-</small> 1,000</h1>
                               
                               <p>70 MH/s</p>
                             </div>
@@ -770,7 +795,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Standard</p>
-                              <h1><small class="pr-2">$</small>1000<small> &nbsp;-</small> 5000</h1>
+                              <h1><small class="pr-2">$</small>2,000<small> &nbsp;-</small> 5,000</h1>
                               
                               <p>370 MH/s</p>
                             </div>
@@ -856,7 +881,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Pro</p>
-                              <h1><small class="pr-2">$</small>500<small> &nbsp;-</small> 1000</h1>
+                              <h1><small class="pr-2">$</small>600<small> &nbsp;-</small> 1,000</h1>
                               
                               <p>400 H/s</p>
                             </div>
@@ -892,7 +917,7 @@
       
                             <div class="col-12 d-flex flex-column all-center">
                               <p>Standard</p>
-                              <h1><small class="pr-2">$</small>1000<small> &nbsp;-</small> 5000</h1>
+                              <h1><small class="pr-2">$</small>2,000<small> &nbsp;-</small> 5,000</h1>
                               
                               <p>2,000 H/s</p> 
                             </div>
@@ -928,10 +953,6 @@
                 </div>
               </div>
               
-              
-              
-              
-              
             </div>
             
             
@@ -941,14 +962,6 @@
     </div>                  
   </div>
 </div>
-
-
-
-
-
-
-
-
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->

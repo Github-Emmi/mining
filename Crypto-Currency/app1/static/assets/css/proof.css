@@ -1,7 +1,7 @@
 /*depositContainer*/
 .depositContainer {
 	width: 100%;
-	background: url(images/ctn-bg.png) transparent no-repeat center;
+	background: url('../images/ctn-bg.png') transparent no-repeat center;
 	background-size: cover;
 	overflow: hidden;
 	padding: 50px 0;
@@ -113,7 +113,7 @@ table td, table th {
 .livel-part {
 	width: 20%;
 	float: left;
-	background: url(images/call-ic1.png) transparent no-repeat center;
+	background: url('../images/call-ic1.png') transparent no-repeat center;
 	overflow: hidden;
 	padding: 50px;
 }

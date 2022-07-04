@@ -1,1 +1,10 @@
 // Here you can add other styles
+@import "node_modules/@coreui/coreui/scss/coreui/transitions.scss";
+.c-wrapper {
+    transition: margin 0.3s;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}

@@ -1,16 +1,15 @@
 from django.core.mail import send_mail
-import email
 from django.http import HttpResponse
+from .forms import SignUpForm, LoginForm, CreditEditForm, DebitEditForm
 from django.shortcuts import render
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.template import loader
 from django import template
-# from .models import 
 from django.contrib.auth import authenticate, login as dj_login
 from django.conf import settings
-from django.forms.utils import ErrorList
+# from django.forms.utils import ErrorList
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 from requests import Request, Session
 import json
@@ -45,24 +44,24 @@ def terms(request):
 def contact(request):
      return render(request, 'jobs/contact.html', {})     
 def sent(request):
-    if request.method == "POST":
+     if request.method == "POST":
           message_name = request.POST['name']
           message_email = request.POST['email']
           message = request.POST['message']
-              ######## send an email ##########
+          # send an email 
           send_mail(
-            'New message from ' + message_name, 
-            message,
-            message_email,
-            ['jonnieerick@gmail.com', 'aghason.emmanuel@gmail.com'],
+               'New message from ' + message_name, 
+               message,
+               message_email,
+               ['venexltd@gmail.com', 'aghason.emmanuel@gmail.com'],
           )
-          return render(request, '/sent.html', {
+          return render(request, 'jobs/sent.html', {
                'message_name': message_name,
                ' message_email': message_email,
                'message' : message,
                })
-    else:
-        return render(request,'jobs/index.html')
+     else:
+          return render(request,'jobs/index.html')
 
 def signup(request):
      msg     = ''
@@ -75,7 +74,7 @@ def signup(request):
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
-           # profile.objects.create(user=user)
+            Profile.objects.create(user=user)
             
 
             msg     = 'User created - please login.'
@@ -101,7 +100,7 @@ def login(request):
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
-            if user is not None:
+            if user != None:
                 dj_login(request, user)
                 return redirect("/dashboard")
             else:    
@@ -199,7 +198,7 @@ def get_crypto_data():
   
 
     # my api key
-    'X-CMC_PRO_API_KEY': '439a6f18-ad33-459b-84e9-16b5f51c81bc',
+    'X-CMC_PRO_API_KEY': '656aab61-f229-41ab-ac8f-adf00f6ff38a',
 
     }
 
@@ -228,7 +227,7 @@ def get_crypto_data_eth():
     'Accepts': 'application/json',
     
     # my api key
-    'X-CMC_PRO_API_KEY': '439a6f18-ad33-459b-84e9-16b5f51c81bc',
+    'X-CMC_PRO_API_KEY': '656aab61-f229-41ab-ac8f-adf00f6ff38a',
 
     }
 
@@ -252,24 +251,25 @@ def fundAccount(request):
     msg = ""
 
     if request.method == "POST":
-        updatecredit = creditEditForm(instance=request.user,
+        updatecredit = CreditEditForm(instance=request.user,
         data=request.POST)
         if updatecredit.is_valid():
             updatecredit.save()
             msg = ''
-            updatecredit = creditEditForm()
+            updatecredit = CreditEditForm()
         else:
-            updatecredit= creditEditForm()
+            updatecredit= CreditEditForm()
             msg = 'Invalid Details'
 
     else:
-        updatecredit = creditEditForm()
+        updatecredit = CreditEditForm()
     
 
 
    
     if request.user.fund_method == 'BTC':
         btc_data = get_crypto_data()
+        print(type(btc_data))
         btc_data = round((1/btc_data)* float(request.user.fund_amount), 8)
         
     else:
@@ -283,7 +283,7 @@ def fundAccount(request):
     else:
         eth_data = None
 
-    return render(request, "fund-account.html", {'credit':updatecredit, "msg": msg, 'data':btc_data, 'eth_data':eth_data })
+    return render(request, "fund-account.html", {'credit':updatecredit, "msg": msg, 'btc_data':btc_data, 'eth_data':eth_data })
 
 
 
@@ -291,7 +291,7 @@ def fundAccount(request):
 ####################################################################
 
           #Error page Catcher
-          #Daniel what should I about this commented code
+
 ####################################################################
 
 @login_required(login_url="/login/")

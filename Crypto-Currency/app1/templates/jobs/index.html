@@ -68,7 +68,7 @@
 				<h1><span>about</span> Venex Crypto</h1>
 				<div class="aboutTop">
 					<div class="aboutTop-part1">
-						<img src="{% static 'assets/images/about-icon1.png' %}">
+						<img src="{% static 'assets/public/coin/logo-dark.png' %}">
 					</div>
 					<div class="aboutTop-part2">
 						<p>
@@ -87,7 +87,7 @@
 									<div class="ctn-invesment-part ctn-invesment-part1">
 				<img src="{% static 'assets/images/icon-plan1.png' %}">
 				<div class="investment-title">
-					<h3> <strong style="font-size: 45px">Plan 1 </strong> <br> <span> 12 Hours </span></h3>
+					<h3> <strong style="font-size: 45px">Basic Plan </strong> <br> <span> 24 Hours </span></h3>
 				</div>
 				<div class="investment-ctn">
 					<hr>
@@ -98,73 +98,73 @@
 					<p>Maximum<span>$100 </span></p>
 					<hr>
 				</div>
-				<a href="{% url 'login' %}">deposit now</a>
+				<a href="{% url 'purchasePlan' %}">deposit now</a>
 			</div>
 									<div class="ctn-invesment-part ctn-invesment-part1">
 				<img src="{% static 'assets/images/icon-plan1.png' %}">
 				<div class="investment-title">
-					<h3> <strong style="font-size: 45px">Plan 2</strong> <br> <span> 24 Hours</span></h3>
+					<h3> <strong style="font-size: 45px">Amatuer Plan</strong> <br> <span> 48 Hours</span></h3>
 				</div>
 				<div class="investment-ctn">
 					<hr>
 					<p>Interest: <span>40% </span></p>
 					<hr>
-					<p>Minimum <span>$100 </span></p>
+					<p>Minimum <span>$150 </span></p>
 					<hr>
 					<p>Maximum<span>$500 </span></p>
 					<hr>
 				</div>
-				<a href="{% url 'login' %}">deposit now</a>
+				<a href="{% url 'purchasePlan' %}">deposit now</a>
 			</div>
 									<div class="ctn-invesment-part ctn-invesment-part1">
 				<img src="{% static 'assets/images/icon-plan1.png' %}">
 				<div class="investment-title">
-					<h3> <strong style="font-size: 45px">Plan 3</strong> <br> <span> 48 Hours</span></h3>
+					<h3> <strong style="font-size: 45px">Standard Plan</strong> <br> <span> 72 Hours</span></h3>
 				</div>
 				<div class="investment-ctn">
 					<hr>
 					<p>Interest: <span>80% </span></p>
 					<hr>
-					<p>Minimum <span>$500 </span></p>
+					<p>Minimum <span>$600 </span></p>
 					<hr>
 					<p>Maximum<span>$2,000 </span></p>
 					<hr>
 				</div>
-				<a href="{% url 'login' %}">deposit now</a>
+				<a href="{% url 'purchasePlan' %}">deposit now</a>
 			</div>
 									<div class="ctn-invesment-part ctn-invesment-part1">
 				<img src="{% static 'assets/images/icon-plan1.png' %}">
 				<div class="investment-title">
-					<h3> <strong style="font-size: 45px">Plan 4</strong> <br> <span> 72 Hours</span></h3>
+					<h3> <strong style="font-size: 45px">Pro Plan</strong> <br> <span> 4 Days</span></h3>
 				</div>
 				<div class="investment-ctn">
 					<hr>
 					<p>Interest: <span>100% </span></p>
 					<hr>
-					<p>Minimum <span>$1,000 </span></p>
+					<p>Minimum <span>$2,500 </span></p>
 					<hr>
-					<p>Maximum<span>$100,000 </span></p>
+					<p>Maximum<span>$4,000 </span></p>
 					<hr>
 				</div>
-				<a href="{% url 'login' %}">deposit now</a>
+				<a href="{% url 'purchasePlan' %}">deposit now</a>
 			</div>
 			
 			
 			<div class="ctn-invesment-part ctn-invesment-part1">
 				<img src="{% static 'assets/images/icon-plan1.png' %}">
 				<div class="investment-title">
-					<h3> <strong style="font-size: 45px">Plan 5</strong> <br /> <span> 4 Days</span></h3>
+					<h3> <strong style="font-size: 45px">Master Plan</strong> <br /> <span> 7 Days</span></h3>
 				</div>
 				<div class="investment-ctn">
 					<hr>
 					<p>Interest: <span>120% </span></p>
 					<hr>
-					<p>Invest <span>$5,000 </span></p>
+					<p>Invest <span>$5,000<sup>+</sup> </span></p>
 					<hr>
-					<p>Earn<span>$7,000 </span></p>
+					<p>Earn<span>$11,000<sup>+</sup> </span></p>
 					<hr>
 				</div>
-				<a href="{% url 'login' %}">deposit now</a>
+				<a href="{% url 'purchasePlan' %}">deposit now</a>
 			</div>
 									
 						
@@ -176,10 +176,12 @@
 		</div>
 		<div id="btc_plan__main_wrapper">
 			<div class="btc_plan__wrapper">
-				<h2>calculate profit</h2>
+				<h2>calculate your profit</h2>
 				<div class="section1">
 					<div class="img_box"><img src="{% static 'assets/images/icon-plan1.png' %}" alt="icon"></div>
-					<div class="profit_box first" style="color: rgb(11, 32, 60); font-weight: bold; font-size: 20px"> <span class="daily-interest">$0.00</span> </span> </div>
+					<div class="profit_box first" style="color: rgb(11, 32, 60); font-weight: bold; font-size: 20px"> 
+						<span class="daily-interest">$.00</span> </span> 
+					</div>
 					<div class="profit_box bgChange second">
 						<p class="profit" style="color: rgb(11, 32, 60); font-weight: bold">$0.00</p>
 					</div>
@@ -190,10 +192,11 @@
 						<label for="plan">Choose plan (required) :</label>
 						<select id="plan">
 							<option value="">Select Plan</option>
-							<option value="Bc" data-percent='23.50' data-min='50.00' data-max='10000.00'>Basic</option>
-							<option value="Ad" data-percent='24.50' data-min='100.00' data-max='50000.00'>Advanced</option>
-							<option value="In" data-percent='28.00' data-min='1000.00' data-max='1000000.00'>Investor</option>
-							<option value="Gd" data-percent='30.00' data-min='10000.00' data-max='3000000.00'>Golden</option>
+							<option value="Bc" data-percent='20.00' data-min='50.00' data-max='100.00'>Basic</option>
+							<option value="Amt" data-percent='40.00' data-min='150.00' data-max='500.00'>Amatuer</option>
+							<option value="std" data-percent='80.00' data-min='600.00' data-max='2000.00'>Standard</option>
+							<option value="pro" data-percent='100.00' data-min='2500.00' data-max='4000.00'>Pro</option>
+							<option value="Master" data-percent='120.00' data-min='5000.00' data-max='150000.00'>Master</option>
 						</select>
 					</div>
 					<div>
@@ -272,8 +275,8 @@
 						return amountInput.textContent = '';	
 					}else {
 						let daily = (percent / 100) * userAmount;
-						let num = daily * 5;
-						document.querySelector(".daily-interest").textContent = daily;
+						let num = daily + userAmount;
+						document.querySelector(".daily-interest").textContent = percent + "%";
 						return num.toFixed(2);
 					}
 				}
@@ -289,7 +292,7 @@
 				profitAreaContainer.classList.add('bgChange');
 
 
-				showProfitArea.style.color = "#0b203c";
+				showProfitArea.style.color =  "#0b203c";
 				showProfitArea.textContent = "$" + calculated();
 			}
 
