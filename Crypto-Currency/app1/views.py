@@ -74,7 +74,7 @@ def signup(request):
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
-            Profile.objects.create(user=user)
+            # Profile.objects.create(user=user)
             
 
             msg     = 'User created - please login.'
@@ -132,6 +132,11 @@ def depositHistory(request):
 @login_required(login_url="/login/")
 def earnings(request):
     return render(request, "earnings.html")
+
+
+@login_required(login_url="/login/")
+def profileUpdate(request):
+    return render(request, "settings.html")
 
 
 
@@ -263,9 +268,6 @@ def fundAccount(request):
 
     else:
         updatecredit = CreditEditForm()
-    
-
-
    
     if request.user.fund_method == 'BTC':
         btc_data = get_crypto_data()

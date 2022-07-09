@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-im=@_!e0%ln&s4kvcru=p+^q(gs+tv=_gaa1@l4+1+!0z1hs37
 DEBUG = True
 AUTH_USER_MODEL = 'app1.User'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['upper-smarties-66853.herokuapp.com', '127.0.0.1',]
 
 
 # Application definition
@@ -73,9 +73,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Venexdb',
-        'USER' : 'postgres',
+        'USER': 'postgres',
         'PASSWORD': 'Emmanuel1999',
         'HOST': 'localhost',
+        # 'NAME': 'd9r6ikr1n0hjb5',
+        # 'USER' : 'apanligbgiglan',
+        # 'PASSWORD': '3d19d39c0988e9bae84c8b49c0834733d292e2a7369284a15c4a9ac68e15fe32',
+        # 'HOST': 'ec2-34-239-241-121.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }

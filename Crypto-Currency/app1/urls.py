@@ -20,7 +20,7 @@ urlpatterns = [
 
     # dashboard
     path('dashboard', views.dashboard, name='dashboard'),
-    # path('settings', views.profileUpdate, name='profileUpdate'),
+    path('settings', views.profileUpdate, name='profileUpdate'),
     path('withdraw', views.withdraw, name='withdraw'),
     path('depositHistory', views.depositHistory, name='depositHistory'),
     path('earnings', views.earnings, name='earnings'),
